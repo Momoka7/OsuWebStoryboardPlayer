@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSU StoryBoard Player Preview</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f8ff;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .buttons {
+        margin-bottom: 20px;
+      }
+
+      .button {
+        background-color: #ffb6c1;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s, background-color 0.2s;
+      }
+
+      .button:hover {
+        background-color: #ffc0cb;
+        transform: translateY(-3px);
+      }
+
+      .button:active {
+        transform: translateY(0);
+      }
+
+      canvas {
+        border: 3px solid #ffb6c1;
+        border-radius: 15px;
+        width: 90vw;
+        aspect-ratio: 16 / 9;
+        /* height: 50.625vw; 16:9 aspect ratio */
+      }
+
+      @media (min-width: 768px) {
+        canvas {
+          width: 80vw;
+          /* aspect-ratio: 16 / 9; */
+          /* height: 45vw; 16:9 aspect ratio */
+        }
+      }
+
+      @media (min-width: 1024px) {
+        canvas {
+          width: 70vw;
+          /* height: 39.375vw; 16:9 aspect ratio */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      注意：本项目仅供学习使用，不得用于商业用途。
+      <br />
+      目前在测试中，日后会支持用户自定义上传osb。
+    </div>
+    <div class="container">
+      <div class="buttons">
+        <button class="button">Demo1</button>
+        <button class="button">Demo2</button>
+        <button class="button">Demo3</button>
+        <button class="button">Demo4</button>
+      </div>
+      <canvas id="myCanvas"></canvas>
+    </div>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+</html>
