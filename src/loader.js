@@ -77,7 +77,15 @@ function parseScript(sbCode, animeContext, callback) {
       }
       // animeContext.progressBar.scale.set((idx / sbCode.length) * 1, 1);
       // console.log(idx / sbCode.length);
-      window.currBtn.innerHTML = Math.ceil((idx / sbCode.length) * 100) + "%";
+      window.currBtn.innerHTML =
+        Math.max(
+          Math.ceil((idx / sbCode.length) * 100),
+          parseInt(
+            typeof window.currBtn.innerHTML == "string"
+              ? 0
+              : window.currBtn.innerHTML
+          )
+        ) + "%";
 
       if (idx == sbCode.length - 1) {
         //等所有脚本解析完毕后再播放
